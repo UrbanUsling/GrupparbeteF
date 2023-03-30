@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <p id="val">hj</p>
     <div class="container">
       <div class="row">
         <div class="col">
@@ -37,9 +38,11 @@
           >
             Beskrivning
           </button>
-          <button class="btn bg-dark" onclick="buyFunction()" id="buy1">
-            <a href="order.html" target="_blank" id="git">Köp</a>
-          </button>
+          <div id="buy">
+            <button class="btn bg-dark" onclick="buyFunction(1)">
+              <a href="order.html" target="_blank" id="git">Köp</a>
+            </button>
+          </div>
           <div class="rowen collapse" id="rowen">
             <div class="col">
               <div class="box">
@@ -65,9 +68,11 @@
           >
             Beskrivning
           </button>
-          <button class="btn bg-dark" onclick="buyFunction()" id="buy2">
-            <a href="order.html" target="_blank" id="git">Köp</a>
-          </button>
+          <div id="buy">
+            <button class="btn bg-dark" onclick="buyFunction(2)">
+              <a href="order.html" target="_blank" id="git">Köp</a>
+            </button>
+          </div>
           <div class="rowen2 collapse" id="rowen2">
             <div class="col">
               <div class="box">
@@ -96,9 +101,11 @@
           >
             Beskrivning
           </button>
-          <button class="btn bg-dark" onclick="buyFunction()" id="buy3">
-            <a href="order.html" target="_blank" id="git">Köp</a>
-          </button>
+          <div id="buy">
+            <button class="btn bg-dark" onclick="buyFunction(3)">
+              <a href="order.html" target="_blank" id="git">Köp</a>
+            </button>
+          </div>
           <div class="rowen3 collapse" id="rowen3">
             <div class="col">
               <div class="box">
@@ -126,9 +133,11 @@
           >
             Beskrivning
           </button>
-          <button class="btn bg-dark" onclick="buyFunction()" id="buy4">
-            <a href="order.html" target="_blank" id="git">Köp</a>
-          </button>
+          <div id="buy">
+            <button class="btn bg-dark" onclick="buyFunction(4)">
+              <a href="order.html" target="_blank" id="git">Köp</a>
+            </button>
+          </div>
           <div class="rowen4 collapse" id="rowen4">
             <div class="col">
               <div class="box">
@@ -143,5 +152,6 @@
       </div>
     </div>
     <script src="main.js"></script>
+    <p class="my-font" id="mydata">Result:</p>
   </body>
 </html>
