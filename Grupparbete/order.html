@@ -17,16 +17,19 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <img src="" alt="product bought" id="product" />
+
     <div class="container">
-      <form novalidate>
+      <form novalidate id="my-form">
         <div class="form-floating">
           <div class="box">
             <label for="name">namn</label>
             <input
               type="name"
-              id="name"
+              id="name1"
               class="form-control"
               placeholder="Skriv namn här"
               required
@@ -38,7 +41,7 @@
             <label for="email">epost</label>
             <input
               type="email"
-              id="email"
+              id="email1"
               class="form-control"
               placeholder="Skriv epost här"
               required
@@ -50,7 +53,7 @@
             <label for="phone">telefonnummer</label>
             <input
               type="phone"
-              id="phone"
+              id="phone1"
               class="form-control"
               placeholder="Skriv telefonnummer här"
               required
@@ -59,9 +62,9 @@
             <div class="valid-feedback">Godkänt nummer</div>
           </div>
         </div>
-        <button>Skicka</button>
+        <input class="btn btn-dark" type="submit" value="Skicka" />
       </form>
     </div>
-    <script src="main.js"></script>
+    <script src="main2.js"></script>
   </body>
 </html>
