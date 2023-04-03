@@ -26,7 +26,7 @@
       <form novalidate id="my-form">
         <div class="form-floating">
           <div class="box">
-            <label for="name">namn</label>
+            <label for="name1">Namn</label>
             <input
               type="name"
               id="name1"
@@ -38,19 +38,19 @@
             <div class="valid-feedback">Godkänt namn</div>
           </div>
           <div class="box">
-            <label for="email">epost</label>
+            <label for="email">E-post</label>
             <input
               type="email"
               id="email1"
               class="form-control"
-              placeholder="Skriv epost här"
+              placeholder="Skriv e-post här"
               required
             />
-            <div class="invalid-feedback">Ogiltigt email</div>
+            <div class="invalid-feedback">Ogiltig e-post</div>
             <div class="valid-feedback">Godkänd epost</div>
           </div>
           <div class="box">
-            <label for="phone">telefonnummer</label>
+            <label for="phone">Telefonnummer</label>
             <input
               type="phone"
               id="phone1"
@@ -60,6 +60,42 @@
             />
             <div class="invalid-feedback">Ogiltigt nummer</div>
             <div class="valid-feedback">Godkänt nummer</div>
+          </div>
+          <div class="box">
+            <label for="address">Gatuadress</label>
+            <input
+              type="address"
+              id="address1"
+              class="form-control"
+              placeholder="Skriv leveransadress här"
+              required
+            />
+            <div class="invalid-feedback">Ogiltig adress</div>
+            <div class="valid-feedback">Godkänd adress</div>
+          </div>
+          <div class="box">
+            <label for="post">Postnummer</label>
+            <input
+              type="post"
+              id="post1"
+              class="form-control"
+              placeholder="Skriv postnummer här"
+              required
+            />
+            <div class="invalid-feedback">Ogiltigt postnummer</div>
+            <div class="valid-feedback">Godkänt postnummer</div>
+          </div>
+          <div class="box">
+            <label for="locality">Ort</label>
+            <input
+              type="locality"
+              id="locality1"
+              class="form-control"
+              placeholder="Skriv ort här"
+              required
+            >
+            <div class="invalid-feedback">Ogiltig ort</div>
+            <div class="valid-feedback">Godkänd ort</div>
           </div>
         </div>
         <input class="btn btn-dark" type="submit" value="Skicka" />
