@@ -61,11 +61,12 @@ window.open("confirmation.html");
 }
 
 function validateName() {
-    let x = document.getElementById("name1").textContent;
-    if (x.length<2) {
+    let x = document.getElementById("name1");
+    console.log(x.value);
+    if (x.value.length<2) {
         alert("Namnet är för kort");
         return false;
-    } else if (x.length > 50) {
+    } else if (x.value.length > 50) {
         alert("Namnet är för långt");
         return false;
     }
