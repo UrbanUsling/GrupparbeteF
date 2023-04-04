@@ -124,9 +124,12 @@ myForm.addEventListener('submit', validateLocality);
   
   function validateAddress() {
       let x = document.getElementById("address1");
-      if (x.value.length>50) {
-          alert("Gatuadressen är för lång");
-          return false;
+      if (x.value.length<4) {
+        alert("Gatuadressen är för kort");
+        return false;
+      }else if (x.value.length>50) {
+        alert("Gatuadressen är för lång");
+        return false;
       }else {return true;}
       }
   
@@ -162,10 +165,11 @@ myForm.addEventListener('submit', validateLocality);
           return false;
       }else {return true;}
       }
+      
       function onSubmit(e){
    
          e.preventDefault();
-         if (validateAddress() && validateAddress() && validateLocality() && validateName() & validatePhone() && validatePost()){
+         if (validateName() && validateEmail() && validatePhone() && validateAddress()() & validatePost() && validateLocality()){
          localStorage.setItem("namnet", names.value);
          localStorage.setItem("emailet", email.value);
          localStorage.setItem("numret", phone.value);
