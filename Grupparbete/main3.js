@@ -16,7 +16,6 @@ newImg.onload = function() {
             newImg.src = "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
          }else if(q==4){
             newImg.src = "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
-            
          }else if(q==5){
             newImg.src = "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg"
             
