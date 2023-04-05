@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="posts"></section>
+    <template id="post-template">
+      <div class="post">
+        <p class="id"></p>
+        <p class="title"></p>
+        <button
+          class="btn2 btn-primary"
+          data-bs-toggle="collapse"
+          data-bs-target=".rowen"
+          aria-expanded="false"
+          aria-controls="rowen"
+        >
+          Beskrivning
+        </button>
+        <div class="rowen collapse" id="rowen">
+          <div class="col">
+            <div class="box">
+              <p class="script"></p>
+            </div>
+          </div>
+        </div>
+        <img src="" alt="" class="post_img" />
+        <p class="price"></p>
+        <p class="cat"></p>
+        <p class="rating"></p>
+        <button
+          class="btn bg-black text-light"
+          value=""
+          onclick="buyFunction()"
+        >
+          Köp
+        </button>
+      </div>
+    </template>
+
+    <!--<div class="container">
+      <div class="row pb-3">
+        <div class="col">
+          <span class="border"></span>
+
+          <img
+            src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+            alt="produkt"
+            id="image1"
+          />
+          <button
+            class="btn btn-primary"
+            data-bs-toggle="collapse"
+            data-bs-target=".rowen"
+            aria-expanded="false"
+            aria-controls="rowen"
+          >
+            Beskrivning
+          </button>
+          <div id="buy">
+            <button class="btn bg-black text-light " onclick="buyFunction(1)">Köp
+            </button>
+          </div>
+          <div class="rowen collapse" id="rowen">
+            <div class="col">
+              <div class="box">
+                Your perfect pack for everyday use and walks in the forest.
+                Stash your laptop (up to 15 inches) in the padded sleeve, your
+                everyday
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <img
+            src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+            alt="produkt"
+            id="image"
+          />
+          <button
+            class="btn btn-primary"
+            data-bs-toggle="collapse"
+            data-bs-target=".rowen2"
+            aria-expanded="false"
+            aria-controls="rowen2"
+          >
+            Beskrivning
+          </button>
+          <div id="buy">
+            <button class="btn bg-black text-light " onclick="buyFunction(2)">Köp
+            </button>
+          </div>
+          <div class="rowen2 collapse" id="rowen2">
+            <div class="col">
+              <div class="box">
+                Slim-fitting style, contrast raglan long sleeve, three-button
+                henley placket, light weight & soft fabric for breathable and
+                comfortable wearing. And Solid stitched shirts with round neck
+                made for durability and a great fit for casual fashion wear and
+                diehard baseball fans. The Henley style round neckline includes
+                a three-button placket.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <img
+            src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
+            alt="produkt"
+            id="image"
+          />
+          <button
+            class="btn btn-primary"
+            data-bs-toggle="collapse"
+            data-bs-target=".rowen3"
+            aria-expanded="false"
+            aria-controls="rowen3"
+          >
+            Beskrivning
+          </button>
+          <div id="buy">
+            <button class="btn bg-black text-light " onclick="buyFunction(3)">Köp
+            </button>
+          </div>
+          <div class="rowen3 collapse" id="rowen3">
+            <div class="col">
+              <div class="box">
+                great outerwear jackets for Spring/Autumn/Winter, suitable for
+                many occasions, such as working, hiking, camping, mountain/rock
+                climbing, cycling, traveling or other outdoors. Good gift choice
+                for you or your family member. A warm hearted love to Father,
+                husband or son in this thanksgiving or Christmas Day.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <img
+            src="https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
+            alt="produkt"
+            id="image"
+          />
+          <button
+            class="btn btn-primary"
+            data-bs-toggle="collapse"
+            data-bs-target=".rowen4"
+            aria-expanded="false"
+            aria-controls="rowen4"
+          >
+            Beskrivning
+          </button>
+          <div id="buy">
+            <button class="btn bg-black text-light " onclick="buyFunction(4)">Köp
+            </button>
+          </div>
+          <div class="rowen4 collapse" id="rowen4">
+            <div class="col">
+              <div class="box">
+                The color could be slightly different between on the screen and
+                in practice. / Please note that body builds vary by person,
+                therefore, detailed size information should be reviewed below on
+                the product description.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row pt-5">
+    <div class="col">
+      <img
+        src="https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg"
+        alt="produkt"
+        id="image"
+      />
+      <button
+        class="btn btn-primary"
+        data-bs-toggle="collapse"
+        data-bs-target=".rowen5"
+        aria-expanded="false"
+        aria-controls="rowen5"
+      >
+        Beskrivning
+      </button>
+      <div id="buy">
+        <button class="btn bg-black text-light " onclick="buyFunction(5)">Köp
+        </button>
+      </div>
+      <div class="rowen5 collapse" id="rowen5">
+        <div class="col">
+          <div class="box">
+            From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl.
+            Wear facing inward to be bestowed with love and abundance, or outward for protection.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <img
+        src="https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg"
+        alt="produkt"
+        id="image"
+      />
+      <button
+        class="btn btn-primary"
+        data-bs-toggle="collapse"
+        data-bs-target=".rowen6"
+        aria-expanded="false"
+        aria-controls="rowen6"
+      >
+        Beskrivning
+      </button>
+      <div id="buy">
+        <button class="btn bg-black text-light " onclick="buyFunction(6)">Köp
+        </button>
+      </div>
+      <div class="rowen6 collapse" id="rowen6">
+        <div class="col">
+          <div class="box">
+            Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States.
+          
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <img
+        src="https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg"
+        alt="produkt"
+        id="image"
+      />
+      <button
+        class="btn btn-primary"
+        data-bs-toggle="collapse"
+        data-bs-target=".rowen7"
+        aria-expanded="false"
+        aria-controls="rowen7"
+      >
+        Beskrivning
+      </button>
+      <div id="buy">
+        <button class="btn bg-black text-light " onclick="buyFunction(7)">Köp
+        </button>
+      </div>
+      <div class="rowen7 collapse" id="rowen7">
+        <div class="col">
+          <div class="box">
+            Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. 
+            Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <img
+        src="https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg"
+        alt="produkt"
+        id="image"
+      />
+      <button
+        class="btn btn-primary"
+        data-bs-toggle="collapse"
+        data-bs-target=".rowen8"
+        aria-expanded="false"
+        aria-controls="rowen8"
+      >
+        Beskrivning
+      </button>
+      <div id="buy">
+        <button class="btn bg-black text-light " onclick="buyFunction(8)">Köp
+        </button>
+      </div>
+      <div class="rowen8 collapse" id="rowen8">
+        <div class="col">
+          <div class="box">
+            Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row pt-5">
+      <div class="col">
+        <img
+          src="https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg"
+          alt="produkt"
+          id="image"
+        />
+        <button
+          class="btn btn-primary"
+          data-bs-toggle="collapse"
+          data-bs-target=".rowen9"
+          aria-expanded="false"
+          aria-controls="rowen9"
+        >
+          Beskrivning
+        </button>
+        <div id="buy">
+          <button class="btn bg-black text-light " onclick="buyFunction(9)">Köp
+          </button>
+        </div>
+        <div class="rowen9 collapse" id="rowen9">
+          <div class="col">
+            <div class="box">
+              USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity;
+               Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; 
+               Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <img
+          src="https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg"
+          alt="produkt"
+          id="image"
+        />
+        <button
+          class="btn btn-primary"
+          data-bs-toggle="collapse"
+          data-bs-target=".rowen10"
+          aria-expanded="false"
+          aria-controls="rowen10"
+        >
+          Beskrivning
+        </button>
+        <div id="buy">
+          <button class="btn bg-black text-light " onclick="buyFunction(10)">Köp
+          </button>
+        </div>
+        <div class="rowen10 collapse" id="rowen10">
+          <div class="col">
+            <div class="box">
+              Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <img
+          src="https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg"
+          alt="produkt"
+          id="image"
+        />
+        <button
+          class="btn btn-primary"
+          data-bs-toggle="collapse"
+          data-bs-target=".rowen11"
+          aria-expanded="false"
+          aria-controls="rowen11"
+        >
+          Beskrivning
+        </button>
+        <div id="buy">
+          <button class="btn bg-black text-light " onclick="buyFunction(11)">Köp
+          </button>
+        </div>
+        <div class="rowen11 collapse" id="rowen11">
+          <div class="col">
+            <div class="box">
+              3D NAND flash are applied to deliver high transfer speeds. 
+              Remarkable transfer speeds that enable faster bootup and improved overall system performance. 
+              The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. 
+              Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <img
+          src="https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg"
+          alt="produkt"
+          id="image"
+        />
+        <button
+          class="btn btn-primary"
+          data-bs-toggle="collapse"
+          data-bs-target=".rowen12"
+          aria-expanded="false"
+          aria-controls="rowen12"
+        >
+          Beskrivning
+        </button>
+        <div id="buy">
+          <button class="btn bg-black text-light " onclick="buyFunction(12)">Köp
+          </button>
+        </div>
+        <div class="rowen12 collapse" id="rowen12">
+          <div class="col">
+            <div class="box">
+              Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row pt-5 pb-5">
+        <div class="col">
+          <img
+            src="https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg"
+            alt="produkt"
+            id="image"
+          />
+          <button
+            class="btn btn-primary"
+            data-bs-toggle="collapse"
+            data-bs-target=".rowen13"
+            aria-expanded="false"
+            aria-controls="rowen13"
+          >
+            Beskrivning
+          </button>
+          <div id="buy">
+            <button class="btn bg-black text-light " onclick="buyFunction(13)">Köp
+            </button>
+          </div>
+          <div class="rowen13 collapse" id="rowen13">
+            <div class="col">
+              <div class="box">
+                21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology.
+                 No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. 
+                 Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <img
+            src="https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg"
+            alt="produkt"
+            id="image"
+          />
+          <button
+            class="btn btn-primary"
+            data-bs-toggle="collapse"
+            data-bs-target=".rowen14"
+            aria-expanded="false"
+            aria-controls="rowen14"
+          >
+            Beskrivning
+          </button>
+          <div id="buy">
+            <button class="btn bg-black text-light " onclick="buyFunction(14)">Köp
+            </button>
+          </div>
+          <div class="rowen14 collapse" id="rowen14">
+            <div class="col">
+              <div class="box">
+                49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR
+                 support and factory calibration provides stunningly realistic and accurate color and contrast 
+                 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <img
+            src="https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg"
+            alt="produkt"
+            id="image"
+          />
+          <button
+            class="btn btn-primary"
+            data-bs-toggle="collapse"
+            data-bs-target=".rowen15"
+            aria-expanded="false"
+            aria-controls="rowen15"
+          >
+            Beskrivning
+          </button>
+          <div id="buy">
+            <button class="btn bg-black text-light " onclick="buyFunction(15)">Köp
+            </button>
+          </div>
+          <div class="rowen15 collapse" id="rowen15">
+            <div class="col">
+              <div class="box">
+                Note:The Jackets is US standard size, Please choose size as your usual wear Material:
+                 100% Polyester; Detachable Liner Fabric: Warm Fleece. 
+                 Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. 
+                 Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.
+                 Zippered Hand Pockets and Hidden Pocket keep your things secure.
+                  Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit.
+                   3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together.
+                    It is suitable for different season and help you adapt to different climates
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <img
+            src="https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
+            alt="produkt"
+            id="image"
+          />
+          <button
+            class="btn btn-primary"
+            data-bs-toggle="collapse"
+            data-bs-target=".rowen16"
+            aria-expanded="false"
+            aria-controls="rowen16"
+          >
+            Beskrivning
+          </button>
+          <div id="buy">
+            <button class="btn bg-black text-light " onclick="buyFunction(16)">Köp
+            </button>
+          </div>
+          <div class="rowen16 collapse" id="rowen16">
+            <div class="col">
+              <div class="box">
+                100% POLYURETHANE(shell) 100% POLYESTER(lining) 
+                75% POLYESTER 25% COTTON (SWEATER),
+                 Faux leather material for style and comfort / 2 pockets of front, 
+                 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, 
+                 HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON
+              </div>
+            </div>
+          </div>
+        </div>
+      </div class="row pt-5 pb-5">
+      <div class="col">
+        <img
+          src="https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg"
+          alt="produkt"
+          id="image"
+        />
+        <button
+          class="btn btn-primary"
+          data-bs-toggle="collapse"
+          data-bs-target=".rowen17"
+          aria-expanded="false"
+          aria-controls="rowen17"
+        >
+          Beskrivning
+        </button>
+        <div id="buy">
+          <button class="btn bg-black text-light " onclick="buyFunction(17)">Köp
+          </button>
+        </div>
+        <div class="rowen17 collapse" id="rowen17">
+          <div class="col">
+            <div class="box">
+              Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. 
+              Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, 
+              it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <img
+          src="https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg"
+          alt="produkt"
+          id="image"
+        />
+        <button
+          class="btn btn-primary"
+          data-bs-toggle="collapse"
+          data-bs-target=".rowen18"
+          aria-expanded="false"
+          aria-controls="rowen18"
+        >
+          Beskrivning
+        </button>
+        <div id="buy">
+          <button class="btn bg-black text-light " onclick="buyFunction(18)">Köp
+          </button>
+        </div>
+        <div class="rowen18 collapse" id="rowen18">
+          <div class="col">
+            <div class="box">
+              95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, 
+              Ribbed on sleeves and neckline / Double stitching on bottom hem
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <img
+          src="https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
+          alt="produkt"
+          id="image"
+        />
+        <button
+          class="btn btn-primary"
+          data-bs-toggle="collapse"
+          data-bs-target=".rowen19"
+          aria-expanded="false"
+          aria-controls="rowen19"
+        >
+          Beskrivning
+        </button>
+        <div id="buy">
+          <button class="btn bg-black text-light " onclick="buyFunction(19)">Köp
+          </button>
+        </div>
+        <div class="rowen19 collapse" id="rowen19">
+          <div class="col">
+            <div class="box">
+              100% Polyester, Machine wash, 100% cationic polyester interlock,
+              Machine Wash & Pre Shrunk for a Great Fit, 
+              Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, 
+              Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <img
+          src="https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"
+          alt="produkt"
+          id="image"
+        />
+        <button
+          class="btn btn-primary"
+          data-bs-toggle="collapse"
+          data-bs-target=".rowen20"
+          aria-expanded="false"
+          aria-controls="rowen20"
+        >
+          Beskrivning
+        </button>
+        <div id="buy">
+          <button class="btn bg-black text-light " onclick="buyFunction(20)">Köp</button>
+          
+        </div>
+        <div class="rowen20 collapse" id="rowen20">
+          <div class="col">
+            <div class="box">
+              95%Cotton,5%Spandex, 
+              Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees.
+              The fabric is soft and has some stretch. 
+              Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter
+            </div>
+          </div>
+        </div>
+      </div>!-->
+    <script src="main.js"></script>
+    <p class="my-font" id="mydata">Result:</p>
+  </body>
+</html>
