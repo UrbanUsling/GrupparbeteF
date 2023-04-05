@@ -75,16 +75,35 @@ const postnumber = document.getElementById('post1');
 const locality = document.getElementById('locality1');
 
 
-
 myForm.addEventListener('submit', onSubmit);
-myForm.addEventListener('submit', validateName);
+/*myForm.addEventListener('submit', validateName);
 myForm.addEventListener('submit', validateEmail);
 myForm.addEventListener('submit', validatePhone);
 myForm.addEventListener('submit', validateAddress);
 myForm.addEventListener('submit', validatePost);
-myForm.addEventListener('submit', validateLocality);
+myForm.addEventListener('submit', validateLocality);*/
 
-    function validateName() {
+
+      
+function onSubmit(e){
+    e.preventDefault();
+    let x1;
+    let x2;
+    let x3;
+    let x4;
+    let x5;
+    let x6;
+      console.log(names.value);
+      if (names.value.length<2) {
+          alert("Namnet är för kort");
+          x1 = 1;
+      } else if (names.value.length > 50) {
+          alert("Namnet är för långt");
+          x1=1;
+      }else {x1=0;}
+      
+
+    /*function validateName() {
       let x = document.getElementById("name1");
       console.log(x.value);
       if (x.value.length<2) {
@@ -94,82 +113,77 @@ myForm.addEventListener('submit', validateLocality);
           alert("Namnet är för långt");
           return false;
       }else {return true;}
-      }
+      }*/
   
-  function validateEmail() {
-      let x = document.getElementById("email1");
-      if (x.value.length>50) {
+  
+      if (email.length>50) {
           alert("E-postadressen är för lång");
-          return false;
-      }else if (x.value.indexOf("@")<0){
+          x2=1;
+      }else if (email.value.indexOf("@")<0){
           alert("E-postadressen måste innehålla @");
-          return false;
-      }else if (x.value.indexOf("@")==0){
+          x2=1;
+      }else if (email.value.indexOf("@")==0){
           alert("E-postadressen får ej börja med @");
-          return false;
-      }else {return true;}
-  }
+          x2=1;
+      }else {x2=0;}
+
   
-  function validatePhone() {
-      let x = document.getElementById("phone1");
+  
+  
       let y = /^[0-9-()]+$/;
-      if (x.value.length>50) {
+      if (phone.value.length>50) {
           alert("Telefonnummret är för långt");
-          return false;
-      } else if (!x.value.match(y)) { //Funkar ej//
+          x3=1;
+      } else if (!phone.value.match(y)) { //Funkar ej//
           alert("Telefonnummret får bara innehålla siffor, -, och ()");
-          return false;
-      }else {return true;}
-      }
-  
-  function validateAddress() {
-      let x = document.getElementById("address1");
-      if (x.value.length<4) {
-        alert("Gatuadressen är för kort");
-        return false;
-      }else if (x.value.length>50) {
-        alert("Gatuadressen är för lång");
-        return false;
-      }else {return true;}
-      }
-  
-  function validatePost() {
-      let x = document.getElementById("post1");
-      let y = /^[0-9 ]+$/;
-      x.setAttribute("pattern", "[0-9]{3}+ [0-9]{2}") //Funkar ej//
-      if (!x.value.match(y)){
-          alert("Postnummret får bara innehålla siffror")
-          return false;
-      }else if (x.value.indexOf(" ")!=3){
-          alert("Postnummret måste ha mellanslag efter 3:e siffran");
-          return false;
-      }else if (x.value.indexOf(" ")!=x.value.lastIndexOf(" ")){
-          alert("Postnummret får bara ha ett mellanslag");
-          return false;
-      }else if (x.value.length>6) { //Funkar ej, onödig om ovanstående check funkar//
-          alert("Postnummret är för långt");
-          return false;
-      }else if (x.value.length<6) { //Funkar ej, onödig om ovanstående check funkar//
-          alert("Postnummret är för kort");
-          return false;
-      }else {return true;}
-      }
-  
-  function validateLocality() {
-      let x = document.getElementById("locality1");
-      if (x.value.length>50) {
-          alert("Ortnamnet är för långt");
-          return false;
-      }else if (x.value.length<2){
-          alert("Ortnamnet är för kort");
-          return false;
-      }else {return true;}
-      }
+          x3=1;
+      }else {x3=0;}
       
-      function onSubmit(e){
+  
+  
+      if (address.value.length<4) {
+        alert("Gatuadressen är för kort");
+        x4=1;
+      }else if (address.value.length>50) {
+        alert("Gatuadressen är för lång");
+        x4=1;
+      }else {x4=0;}
+      
+  
+  
+      let z = /^[0-9 ]+$/;
+      postnumber.setAttribute("pattern", "[0-9]{3}+ [0-9]{2}") //Funkar ej//
+      if (!postnumber.value.match(z)){
+          alert("Postnummret får bara innehålla siffror")
+          x5=1;
+      }else if (postnumber.value.indexOf(" ")!=3){
+          alert("Postnummret måste ha mellanslag efter 3:e siffran");
+          x5=1;
+      }else if (postnumber.value.indexOf(" ")!=postnumber.value.lastIndexOf(" ")){
+          alert("Postnummret får bara ha ett mellanslag");
+          x5=1;
+      }else if (postnumber.value.length>6) { //Funkar ej, onödig om ovanstående check funkar//
+          alert("Postnummret är för långt");
+          x5=1;
+      }else if (postnumber.value.length<6) { //Funkar ej, onödig om ovanstående check funkar//
+          alert("Postnummret är för kort");
+          x5=1;
+      }else {x5=0;}
+      
+  
+  
+      if (locality.value.length>50) {
+          alert("Ortnamnet är för långt");
+          x6=1;
+      }else if (locality.value.length<2){
+          alert("Ortnamnet är för kort");
+          x6=1;
+      }else {x6=0;}
+      
    
-         e.preventDefault();
-         if (validateName() && validateEmail() && validatePhone() && validateAddress()() & validatePost() && validateLocality()){
+      
+//validateEmail() && validatePhone() && validateAddress() && validatePost() && validateLocality()
+         if (x1== 0 && x2 == 0 && x3== 0 && x4 == 0&& x5 == 0 && x6 == 0){
          localStorage.setItem("namnet", names.value);
          localStorage.setItem("emailet", email.value);
          localStorage.setItem("numret", phone.value);

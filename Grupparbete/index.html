@@ -20,8 +20,47 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <p id="val"></p>
-    <div class="container">
+    <H1>Välkommen till WEBSHOPEN</H1>
+    <section id="posts"></section>
+    
+    <template id="post-template">
+      <div class="post" align="center" >
+        
+        <p class="id" ></p>
+        <p class="title"></p>
+        <img src="" alt="" class="post_img" />
+        <br/>
+        <button
+          class="btn2 btn-primary"
+          data-bs-toggle="collapse"
+          data-bs-target=".rowen"
+          aria-expanded="false"
+          aria-controls="rowen"
+        >
+          Beskrivning
+        </button>
+        <div class="rowen collapse" id="rowen" >
+          <div class="col">
+            <div class="box">
+              <p class="script"></p>
+            </div>
+          </div>
+        </div>
+        
+        <p class="price"></p>
+        <p class="cat"></p>
+        <p class="rating"></p>
+        <button
+          class="btn bg-black text-light"
+          value=""
+          onclick="buyFunction()"
+        >
+          Köp
+        </button>
+      </div>
+    </template>
+
+    <!--<div class="container">
       <div class="row pb-3">
         <div class="col">
           <span class="border"></span>
@@ -615,7 +654,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>!-->
     <script src="main.js"></script>
     <p class="my-font" id="mydata">Result:</p>
   </body>
