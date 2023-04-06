@@ -1,24 +1,13 @@
-let bought;
-let bought_serialized = JSON.stringify(bought);
-/*function buyFunction(clickedValue) {
-    bought_serialized=clickedValue;
-   console.log(clickedValue);
-   console.log(bought_serialized);
-   localStorage.setItem("chosen", bought_serialized);
-   window.open("order.html");
-   
-}*/
+
 
 function buyFunction(value) {
-    bought_serialized=value;
+    
     const ware = localStorage.getItem(value);
     const pic = localStorage.getItem("Image"+value);
-    //bought_serialized=document.querySelector(".btn").value;
-   //console.log(document.querySelector(".btn").value);
-   console.log(bought_serialized);
+   
    console.log(ware);
    console.log(pic);
-   localStorage.setItem("chosen", bought_serialized);
+   
    localStorage.setItem("kopt", ware)
     localStorage.setItem("koptBild", pic)
    window.open("order.html");

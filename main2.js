@@ -54,7 +54,7 @@ function onSubmit(e){
       if (phone.value.length>50) {
           alert("Telefonnummret är för långt");
           x3=1;
-      } else if (!phone.value.match(y)) { //Funkar ej//
+      } else if (!phone.value.match(y)) { 
           alert("Telefonnummret får bara innehålla siffor, -, och ()");
           x3=1;
       }else {x3=0;}
@@ -72,7 +72,7 @@ function onSubmit(e){
   
   
       let z = /^[0-9 ]+$/;
-      postnumber.setAttribute("pattern", "[0-9]{3}+ [0-9]{2}") //Funkar ej//
+      postnumber.setAttribute("pattern", "[0-9]{3}+ [0-9]{2}") 
       if (!postnumber.value.match(z)){
           alert("Postnummret får bara innehålla siffror och ett mellanslag")
           x5=1;
@@ -82,10 +82,10 @@ function onSubmit(e){
       }else if (postnumber.value.indexOf(" ")!=postnumber.value.lastIndexOf(" ")){
           alert("Postnummret får bara ha ett mellanslag");
           x5=1;
-      }else if (postnumber.value.length>6) { //Funkar ej, onödig om ovanstående check funkar//
+      }else if (postnumber.value.length>6) { 
           alert("Postnummret är för långt");
           x5=1;
-      }else if (postnumber.value.length<6) { //Funkar ej, onödig om ovanstående check funkar//
+      }else if (postnumber.value.length<6) { 
           alert("Postnummret är för kort");
           x5=1;
       }else {x5=0;}
@@ -119,7 +119,7 @@ function onSubmit(e){
          console.log(localStorage.getItem("postnumret"));
          console.log(localStorage.getItem("orten"));
          
-     console.log(localStorage.getItem("chosen"));
+     
      window.open("confirmation.html");
          }
          }
