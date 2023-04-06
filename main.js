@@ -9,11 +9,18 @@ let bought_serialized = JSON.stringify(bought);
    
 }*/
 
-function buyFunction() {
-    bought_serialized=document.querySelector(".btn").value;
-   console.log(document.querySelector(".btn").value);
+function buyFunction(value) {
+    bought_serialized=value;
+    const ware = localStorage.getItem(value);
+    const pic = localStorage.getItem("Image"+value);
+    //bought_serialized=document.querySelector(".btn").value;
+   //console.log(document.querySelector(".btn").value);
    console.log(bought_serialized);
+   console.log(ware);
+   console.log(pic);
    localStorage.setItem("chosen", bought_serialized);
+   localStorage.setItem("kopt", ware)
+    localStorage.setItem("koptBild", pic)
    window.open("order.html");
    
 }
@@ -51,16 +58,21 @@ async function getData(){
             const butt = newPost.querySelector(".btn");
             //const postRating = newPost.querySelector(".rating")
 
-            postId.innerText = id;
+            postId.innerText = "Item nr: " + id;
             postTitle.innerText = title;
             postScript.innerText = description;
             postImg.src = image;
-            postPrice.innerText = price + "$";
-            postCat.innerText = categorys;
+            postPrice.innerText = "Price: " + price + "$";
+            postCat.innerText = "Category: " + categorys;
             butt.value = id;
-            butt.innerText = id;
+            //butt.innerText = id;
             //postRating.innerText = rating;
             postSection.appendChild(newPost);
+            let total = `${title+"   ||   " +description +"   ||   " +price + "$"}`
+            let description_serialized = JSON.stringify(total);
+            //let image_serializes = JSON.stringify(image);
+            localStorage.setItem("Image"+i, image);
+            localStorage.setItem(i, description_serialized);
 
         
         }
